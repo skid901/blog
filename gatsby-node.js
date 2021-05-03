@@ -10,7 +10,7 @@ const path = require('path');
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
-  const component = path.resolve(`${__dirname}/src/pages/post.js`);
+  const component = path.resolve(`${__dirname}/src/templates/post.js`);
   const { data, errors } = await graphql(`
     {
       allMarkdownRemark {
