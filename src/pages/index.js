@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import PostLink from '../components/postLink';
 
 export default function IndexPage() {
   const data = useStaticQuery(
@@ -11,10 +12,11 @@ export default function IndexPage() {
         allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
           edges {
             node {
+              id
               frontmatter {
                 path
                 title
-                date(formatString: "YYYY년 MM월 DD일 HH시 mm분")
+                date(formatString: "MMMM DD, YYYY")
               }
             }
           }
@@ -26,23 +28,11 @@ export default function IndexPage() {
   return (
     <Layout>
       <Seo title="Home" />
-      <p>
-        {data.allMarkdownRemark.edges.map(
-          ({
-            node: {
-              frontmatter: { path, title, date },
-            },
-          }) => (
-            <>
-              <Link to={path}>
-                <span style={{ fontSize: '20px' }}>{title}</span>
-              </Link>
-              {` - ${date}`}
-              <br />
-            </>
-          ),
-        )}
-      </p>
+      <ul style={{ width: '85%', margin: '0 auto' }}>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <PostLink key={node.id} node={node} />
+        ))}
+      </ul>
     </Layout>
   );
 }

@@ -1,0 +1,26 @@
+.post-link {
+    padding: 10px 20px;
+    list-style:none;
+}
+
+.post-link__wrapper,
+.post-link__wrapper:active,
+.post-link__wrapper:hover {
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+
+.post-link__wrapper:hover .post-link__title {
+    color: rebeccapurple;
+}
+
+.post-link__title {
+    font: 25px black;
+    font-weight: 600;
+}
+
+.post-link__date {
+    font: 20px black;
+    opacity: 50%;
+}
