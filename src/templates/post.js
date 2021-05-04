@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import './post.css';
+import Profile from '../components/profile';
 
 export default function Post({ data }) {
   const {
@@ -23,6 +24,7 @@ export default function Post({ data }) {
           className="post__content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <Profile />
         <Link to="/">Go back to the homepage</Link>
       </div>
     </Layout>

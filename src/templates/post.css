@@ -7,11 +7,12 @@
     text-align: center;
     width: 70%;
     margin: 0 auto;
+    padding: 80px 0 60px;
 }
 
 .post__date {
     text-align: right;
-    margin-top: 26px;
+    margin: 26px 0 60px;
     font-size: 25px;
     font-weight: 400;
     opacity: 0.5;
