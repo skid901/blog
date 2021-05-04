@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import './post.css';
 
 export default function Post({ data }) {
   const {
@@ -15,11 +16,11 @@ export default function Post({ data }) {
   return (
     <Layout>
       <Seo title={title} />
-      <div className="blog-post">
-        <h1>{title}</h1>
-        <h2>{date}</h2>
+      <div className="post">
+        <h1 className="post__title">{title}</h1>
+        <h2 className="post__date">{date}</h2>
         <div
-          className="blog-post-content"
+          className="post__content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
         <Link to="/">Go back to the homepage</Link>
@@ -34,7 +35,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY년 MM월 DD일 HH시 mm분")
+        date(formatString: "MMMM DD, YYYY")
         path
       }
     }

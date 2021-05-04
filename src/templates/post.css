@@ -1,0 +1,16 @@
+.post {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.post__title {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.post__date {
+    text-align: right;
+    margin-top: 26px;
+    opacity: 50%;
+}
