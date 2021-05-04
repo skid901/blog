@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import PostLink from '../components/postLink';
+import Profile from '../components/profile';
 
 export default function IndexPage() {
   const data = useStaticQuery(
@@ -28,6 +29,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <Seo title="Home" />
+      <Profile />
       <ul style={{ width: '85%', margin: '0 auto' }}>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostLink key={node.id} node={node} />
