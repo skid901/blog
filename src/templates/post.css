@@ -12,5 +12,7 @@
 .post__date {
     text-align: right;
     margin-top: 26px;
-    opacity: 50%;
+    font-size: 25px;
+    font-weight: 400;
+    opacity: 0.5;
 }
