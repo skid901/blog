@@ -26,7 +26,7 @@ const Profile = () => {
         <div className="profile__description">
           웹 개발자 <span className="profile__nickname">skid901</span>의
           <br />
-          개발자로서의 기록 ・ 성장 ・ 나눔을 위한 기술 블로그 입니다.
+          개발자로서의 기록 ・ 성장 ・ 공유를 위한 기술 블로그 입니다.
         </div>
         <ul className="profile__link-list">
           {links.map(([name, link], i) => (
