@@ -30,7 +30,7 @@ const Profile = () => {
         </div>
         <ul className="profile__link-list">
           {links.map(([name, link], i) => (
-            <li>
+            <li key={i}>
               <a href={link} target="blank">
                 {name}
               </a>
